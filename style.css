@@ -3,32 +3,43 @@ body {
     font-size: 14px;
     font-family: Roboto,HelveticaNeue,Arial,sans-serif;
     color: #222;
-  }
-  
-/*.sticky-top {
-    position: sticky;
-    top: 0px;
-    display: flex;
-    align-items: center;
-    padding: 6px;
-    height: 60px;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    overflow: auto;
 }
-*/
+.navbar {
+  display: flex;
+  align-items: justify;
+}
 .topleft {
-    position: sticky;
-    top: 0px;
+   top: 0px;
     display: flex;
     align-items: center;
     padding: 6px;
     height: 60px;
     flex-shrink: 0;
     box-sizing: border-box;
-    float: left;
+}
+.topright {
+    margin-left: auto;
+     top: 0px;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    height: 60px;
+    flex-shrink: 0;
+    box-sizing: border-box;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: inline;
+  padding: 5px;
+    margin: 0px 5px 0px 15px;
+    color: #222;
+    text-decoration: none;
+}
 a.toplinks {
     display: inline-block;
     padding: 5px;
@@ -36,20 +47,8 @@ a.toplinks {
     color: #222;
     text-decoration: none;
 }
-a.toplinks:hover {
-    text-decoration: underline;
-}
-
-.topright {
-    position: sticky;
-    top: 0px;
-    display: flex;
-    align-items: center;
-    padding: 6px;
-    height: 60px;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    float: right;
+a:hover {
+  text-decoration: underline;
 }
 .frame {
     margin: 0px 5px 0px 5px;
@@ -58,6 +57,7 @@ a.toplinks:hover {
     width: 40px;
     overflow: hidden;
     border: 2px solid #3a9e92;
+    display: inline-block;
 }
 
 .icondiv {
@@ -111,7 +111,6 @@ a.toplinks:hover {
     margin-left: auto;
     margin-right: auto; 
     flex-shrink: 0;
-   
 }
 .searchbox {
     margin: 0 auto;
@@ -131,17 +130,18 @@ a.toplinks:hover {
     width: 100%;
     height: 40px;
     border-radius: 100px;
-    border: 0.05px solid #dfe1e5;
+    border: 0.5px solid #dfe1e5;
     justify-content: center;
     vertical-align:middle;
 }    
 
 #inputbox {
-    width: 80%;
+    flex: 1;
     height: 40px;
     border: none;
-    margin: auto;
+    margin: 0px;
     outline: none;
+    box-sizing: border-box;
 }
 .searchbuttons {
     height: 70px;
@@ -150,44 +150,38 @@ a.toplinks:hover {
     z-index: 0;
 }
 .mag {
-    width: 5%;
+    display: flex;
+    align-items: center;
+    border: 0;
+    outline: none;
+    width: auto;
     margin: auto;
-    display: block;
+    line-height: 44px;
 }
 
 svg {
-    display: block;
-    height: 100%;
-    width: 100%;
-    margin-top: 3px;
+    margin: 3px 10px;
     color: #9aa0a6;
     height: 20px;
     width: 20px;
-    line-height: 24px;
-    display: inline-block;
+    display: block;
     fill: currentColor;
     position: relative;
 }
 
 .mic {
-    display: block;
-    cursor: pointer;
+    display: flex;
     align-items: center;
     border: 0;
-    background: transparent;
     outline: none;
-    padding: 0 8px;
-    width: 5%;
+    width: auto;
+    margin: auto;
     line-height: 44px;
-    line-height: 44px;
-    vertical-align: middle;
 }
 .microphone {
     display: block;
-    
     height: 24px;
     width: 24px;
-    margin-top: 7px;
     cursor: pointer;
 }
 .inputbutton {
@@ -203,24 +197,13 @@ svg {
     height: 36px;
     min-width: 54px;
     text-align: center;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
-
 .empty{
     flex-grow: 1;
     flex-shrink: 0;
     box-sizing: border-box;
 }
-
-
-/*.carbontext {
-    display: block;
-    padding: 15px;
-    white-space: nowrap;
-}*/
-
-
 .footer {
     position: fixed;
     width: 100%;
@@ -237,6 +220,17 @@ svg {
 }
 
 .carbon {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #70757a;
+    padding: 15px;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 1200px) {
+.carbon {
     order: 0;
     width: 100%;
     justify-content: center;
@@ -245,6 +239,7 @@ svg {
     color: #70757a;
     padding: 15px;
     white-space: nowrap;
+}
 }
 
 .carbonneutral {
